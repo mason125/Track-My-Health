@@ -12,7 +12,7 @@ const app = angular.module("unit", ["ngRoute"]);
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-        template: "<h2>Please Make A Selection</h2>"
+        template: ""
     })
     .when("/BP_Enter", {
         templateUrl : "views/BP_Enter.html"

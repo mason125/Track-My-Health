@@ -5,50 +5,59 @@
  */
 
 "use strict";
+collapse_subs();
 
-//hide secondary btns
-$("#stats_btn_bs").hide();
-$("#enter_btn_bs").hide();
-$("#stats_btn_bp").hide();
-$("#enter_btn_bp").hide();
+//when med is clicked the eveything closes 
+$("#med_btn").on('click',() => $("#main_menu").hide());
 
-//diabetes menu
-$("#diabetes_btn").on('click', function(){
-   collapse();
-   $("#enter_btn_bs").show();
-   $("#stats_btn_bs").show();
+//weight click
+$("#weight_btn").on('click', function(){
+    $("#main_menu").hide();
+    $("#sub_weight").show();
 });
 
-//blood pressure menu
-$("#bloodPressure_btn").on('click', function(){
-   collapse();
-   $("#enter_btn_bp").show();
-   $("#stats_btn_bp").show();
+//blood sugar click main.........................................................
+$("#bs_btn").on('click',function(){
+    $("#main_menu").hide();
+    $("#chart").show();
+    $("#sub_bs").show();
 });
 
-//hide submenu choices diabetes.................................................
-$("#enter_btn_bs").on('click', function(){
-    $("#stats_btn_bs").hide();
-});
-
-$("#stats_btn_bs").on('click', function(){
-    $("#enter_btn_bs").hide();
-});
+//control sub menu
+$("#sub_bs").on('click', () => $("#sub_bs").hide());
 //..............................................................................
 
-//hide submenu choices Blood Pressure...........................................
-$("#enter_btn_bp").on('click', function(){
-   $("#stats_btn_bp").hide(); 
+//blood pressure click main.....................................................
+$("#bp_btn").on('click',function(){
+    $("#main_menu").hide();
+    $("#chart").show();
+    $("#sub_bp").show();
+});
+//sub menu
+$("#sub_bp").on('click', () => $("#sub_bp").hide());
+//..............................................................................
+
+//weight main click.............................................................
+$("#weight_btn").on('click',function(){
+   $("#sub_weight").show();
 });
 
-$("#stats_btn_bp").on('click', function(){
-   $("enter_btn_bp").hide(); 
+$("#sub_weight").on('click', () => $("#sub_weight").hide());
+//..............................................................................
+
+//home click
+$("#home").on('click', function(){
+   collapse_subs();
+   $("#main_menu").show();
 });
-//close function 
-function collapse()
+
+function collapse_subs()
 {
-    $("#diabetes_btn").hide();
-    $("#med_btn").hide();
-    $("#bloodPressure_btn").hide();
+  $("#chart").hide();
+  $("#sub_weight").hide();
+  $("#sub_bp").hide();
+  $("#sub_bs").hide();
 }
 
+
+ 

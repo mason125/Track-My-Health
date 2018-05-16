@@ -7,32 +7,47 @@
         <script src="JS/jquery-3.2.1.min.js"></script>
         <script src="JS/angular.min.js"></script>
         <script src="JS/angular-route.js"></script>
+        <script src ="JS/plotly-latest.min.js"></script>
         <title>Track My Health</title>
     </head>
     <body ng-app="unit">
         <div id ="main">
             <h1 align ="center"> Track My Health </h1>
-            <a id = "home" href ="#!/"><img src ="pics/home.png"/></a>
+            <a id = "home" href ="#!/"><img src ="pics/home_1.png"/></a>
             <!-- buttons-->
             <div align ="center">
-                <a id = "bloodPressure_btn"><img src ="pics/BP.png"/></a>
+                <div id = "main_menu">
+                    <a id = "bp_btn"><img src ="pics/BP.png"/></a>
+                    <a id = "bs_btn"><img src ="pics/BS.png"/></a>
+                    <br>
+                    <!--meds goes straight to routing page-->
+                    <a id = "med_btn"><img src ="pics/meds.png"/></a>
+                    <a id ="weight_btn"><img src="pics/Weight.png"></a>
+                </div>
                 <br>
-                <a id = "diabetes_btn"><img src ="pics/BS.png"/></a>
+                <div id = "sub_bp">
+                    <a href ="#!BS_Enter"><img src ="pics/Enter.png"/></a>
+                    <br>
+                    <a href ="#!BS_view"><img src ="pics/stats.png"/></a>
+                </div>
                 <br>
-                <a id = "med_btn" href ="#!meds"><img src ="pics/meds.png"/></a>
-                <br>
-                <a id = "enter_btn_bs" href ="#!BS_Enter"><img src ="pics/Enter.png"/></a>
-                <br>
-                <a id ="stats_btn_bs" href ="#!BS_view"><img src ="pics/stats.png"/></a>
-                <br>
-                <a id ="enter_btn_bp" href="#!BP_Enter"><img src ="pics/Enter.png"/></a>
-                <br>
-                <a id ="stats_btn_bp" href ="#!BP_view"><img src ="pics/stats.png"/></a>
+                <div id = "sub_bs">
+                    <a  href="#!BP_Enter"><img src ="pics/Enter.png"/></a>
+                    <br>
+                    <a  href ="#!BP_view"><img src ="pics/stats.png"/></a>
+                </div>
+                <div id = "sub_weight">
+                    <a><img src ="pics/Enter.png"/></a>
+                    <br>
+                    <a><img src ="pics/stats.png"/></a>
+                </div>
             </div>
+            <div id ="chart" align = "center"></div>
             <div align = "center" ng-view id = "spa"></div>
         </div>
-        <script type="text/javascript" src="JS/Menus.js"></script>
-        <script type="text/javascript" src="JS/Routing.js"></script>
+        <script src="JS/Menus.js"></script>
+        <script src="JS/Routing.js"></script>
+        <script src ="JS/Stats.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
     </body>
 </html>

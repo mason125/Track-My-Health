@@ -3,5 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-document.getElementById("demo").innerHTML= "sith";
+"using strict"
+TESTER = document.getElementById('chart');
+Plotly.plot( TESTER, [{
+x: [1, 2, 3, 4, 5],
+y: [1, 2, 4, 8, 16] }], {
+margin: { t: 0 } } );

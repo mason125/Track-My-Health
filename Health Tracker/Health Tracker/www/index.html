@@ -7,6 +7,7 @@
         <script src="JS/jquery-3.2.1.min.js"></script>
         <script src="JS/angular.min.js"></script>
         <script src="JS/angular-route.js"></script>
+        <script src ="JS/plotly-latest.min.js"></script>
         <title>Track My Health</title>
     </head>
     <body ng-app="unit">
@@ -29,10 +30,13 @@
                 <br>
                 <a id ="stats_btn_bp" href ="#!BP_view"><img src ="pics/stats.png"/></a>
             </div>
+            <div id ="chart" align = "center"></div>
             <div align = "center" ng-view id = "spa"></div>
         </div>
-        <script type="text/javascript" src="JS/Menus.js"></script>
-        <script type="text/javascript" src="JS/Routing.js"></script>
+       
+        <script src="JS/Menus.js"></script>
+        <script src="JS/Routing.js"></script>
+        <script src ="JS/Stats.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
     </body>
 </html>

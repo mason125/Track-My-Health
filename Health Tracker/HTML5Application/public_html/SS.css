@@ -41,6 +41,13 @@ a{
     top: 0;
     left: 0;
 }
+
+#chart
+{
+    width: 350px;
+    height: 200px;
+}
+
 .form
 {
     background-color: white;
@@ -48,3 +55,4 @@ a{
     border: 2px solid #000000;
     padding: 10px 22px;
 }
+

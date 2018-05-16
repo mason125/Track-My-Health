@@ -6,7 +6,6 @@
 
 "use strict";
 collapse_subs();
-
 //diabetes menu
 $("#diabetes_btn").on('click', function(){
    collapse_main();
@@ -28,6 +27,7 @@ $("#enter_btn_bs").on('click', function(){
 
 $("#stats_btn_bs").on('click', function(){
     $("#enter_btn_bs").hide();
+    $("#chart").show();
 });
 //..............................................................................
 
@@ -53,6 +53,7 @@ function collapse_subs()
     $("#stats_btn_bp").hide();
     $("#enter_btn_bs").hide();
     $("#stats_btn_bs").hide();
+    $("#chart").hide();
 }
 //close main menu
 function collapse_main()
