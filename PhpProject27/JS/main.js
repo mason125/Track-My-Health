@@ -10,6 +10,7 @@ angular.module('unit').controller('operation', function($scope, $http) {
     //turn on main menu
     $scope.main = function()
     {
+
        $("#main_menu").show();
        $("#login").hide();
        $("#sub_wt").hide();

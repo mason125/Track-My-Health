@@ -45,7 +45,7 @@
                         <a  href ="#!BP_view"><img src ="pics/stats.png"/></a>
                     </div>
                     <div id = "sub_wt">
-                        <a><img src ="pics/Enter.png"/></a>
+                        <a href="#!WT_Enter"><img src ="pics/Enter.png"/></a>
                         <br>
                         <a><img src ="pics/stats.png"/></a>
                     </div>
@@ -58,6 +58,7 @@
         <script src="JS/main.js"></script>
         <script src="JS/blood_sugar.js"></script>
         <script src="JS/blood_pressure.js"></script>
+        <script src ="JS/weight.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
     </body>
 </html>

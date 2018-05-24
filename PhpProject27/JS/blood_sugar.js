@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 
-
 angular.module('unit').controller('BS', function($scope, $http) {
 
    $scope.read = function()
@@ -14,6 +13,7 @@ angular.module('unit').controller('BS', function($scope, $http) {
    
    $scope.write = function(glucose)
    {
+       alert("BS here")
         $scope.value = glucose;
         $http.get("backend.php", {params:{'func':2, 'cat': "bs", 'val':$scope.value}}).then(function(response) {
             $scope.myWelcome = response.data;

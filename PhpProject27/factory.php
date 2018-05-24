@@ -22,7 +22,7 @@ class factory
             return (new blood_pressure);
         }
         
-        elseif ($choice == "wt")
+        else 
         {
             return (new weight);
         }
