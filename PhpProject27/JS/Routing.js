@@ -30,7 +30,7 @@ app.config(function($routeProvider) {
     .when("/BS_view",{
         templateUrl: "views/BS_view.html"
     })
-    .when("/meds",{
-        templateUrl: "views/Meds.html"
+    .when("/WT_Enter",{
+        templateUrl: "views/WT_Enter.html"
     })
 });

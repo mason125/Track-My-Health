@@ -11,9 +11,13 @@ angular.module('unit').controller('WT', function($scope, $http) {
        
    }
    
-   $scope.write = function()
+   $scope.write = function(weight)
    {
-       
+        $scope.value = glucose;
+        $http.get("backend.php", {params:{'func':2, 'cat': "bs", 'val':$scope.value}}).then(function(response) {
+            $scope.myWelcome = response.data;
+            alert($scope.myWelcome);
+        });
    }
  
  });

@@ -15,7 +15,14 @@ class weight extends selection {
     //put your code here
     public function enter($val)
     {
+        $con = $this -> db();
+        $query = "INSERT INTO WT (ID, WEIGHT, CDATE) VALUES (1,?, NOW()";
+        $stmt = $con ->prepare($query);
+        $stmt->bind_param("i", $val);
+        $stmt -> execute();
+        $con->close();
         
+        echo("Update Complete!");
     }
     
     public function read()
