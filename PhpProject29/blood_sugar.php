@@ -25,6 +25,13 @@ class blood_sugar extends selection
     //this method queries blood sugar data from database
     public function read()
     {
-        echo "BS php read";
+        
+        $con = $this -> db();
+        $query = mysqli_query($con,"SELECT * FROM BS WHERE ID = 1");
+        
+        while ($row = mysqli_fetch_array($query)) {
+            $data[] = array("CDATE"=>$row['CDATE'],"GLUCOSE"=>$row['GLUCOSE']);
+        }
+        echo json_encode($data);
     }
 }

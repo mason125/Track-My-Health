@@ -50,6 +50,7 @@
                         <a><img src ="pics/stats.png"/></a>
                     </div>
                 </div>
+                
                 <div id ="chart" align = "center"></div>      
                 <div align = "center" ng-view id = "spa"></div>
             </div>

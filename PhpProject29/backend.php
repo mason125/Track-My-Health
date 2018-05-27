@@ -30,6 +30,7 @@ if(isset($_GET['func']))//enter data to db
 }
  else //read data from db
  {
+ 
     $fac = $sel -> func($_GET["cat"]);
-    $fac -> read($_GET['val']);     
+    $fac -> read();     
  }

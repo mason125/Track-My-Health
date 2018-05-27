@@ -8,7 +8,11 @@ angular.module('unit').controller('BS', function($scope, $http) {
 
    $scope.read = function()
    {
-  
+        
+        $http.get("backend.php", {params:{'cat': "bs"}}).then(function(response) {
+            $scope.user = response.data;
+           
+        });
    }
    
    $scope.write = function(glucose)
