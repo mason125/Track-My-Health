@@ -8,7 +8,10 @@ angular.module('unit').controller('WT', function($scope, $http) {
  
    $scope.read = function()
    {
-       
+          $http.get("backend.php", {params:{'cat': "wt"}}).then(function(response) {
+            $scope.user = response.data;
+           
+        });
    }
    
    $scope.write = function(weight)

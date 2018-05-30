@@ -28,6 +28,12 @@ class weight extends selection {
     
     public function read()
     {
+         $con = $this -> db();
+        $query = mysqli_query($con,"SELECT * FROM WT WHERE ID = 1");
         
+        while ($row = mysqli_fetch_array($query)) {
+            $data[] = array("CDATE"=>$row['CDATE'],"WEIGHT"=>$row['WEIGHT']);
+        }
+        echo json_encode($data);
     }
 }

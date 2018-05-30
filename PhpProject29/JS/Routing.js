@@ -33,4 +33,7 @@ app.config(function($routeProvider) {
     .when("/WT_Enter",{
         templateUrl: "views/WT_Enter.html"
     })
+    .when("/WT_view",{
+       templateUrl: "views/WT_view.html"
+    })
 });

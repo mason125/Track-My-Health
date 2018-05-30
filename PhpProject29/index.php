@@ -47,7 +47,7 @@
                     <div id = "sub_wt">
                         <a href="#!WT_Enter"><img src ="pics/Enter.png"/></a>
                         <br>
-                        <a><img src ="pics/stats.png"/></a>
+                        <a href="#!WT_view"><img src ="pics/stats.png"/></a>
                     </div>
                 </div>
                 
