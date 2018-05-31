@@ -14,7 +14,7 @@
 
 abstract class selection
 {
-    abstract protected function enter($z);
+    abstract protected function enter($val, $val2);
     abstract protected function read();
     
     public function db()

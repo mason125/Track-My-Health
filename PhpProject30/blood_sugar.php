@@ -10,7 +10,7 @@
 class blood_sugar extends selection
 {
     //this method enter blood sugar data into database
-    public function enter($val)
+    public function enter($val, $val2)
     {
         $con = $this -> db();
         $query = "INSERT INTO BS (ID, CDATE, GLUCOSE) VALUES (1, NOW(), ?)";

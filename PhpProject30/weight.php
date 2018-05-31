@@ -13,7 +13,7 @@
  */
 class weight extends selection {
     //put your code here
-    public function enter($val)
+    public function enter($val, $val2)
     {
         
         $con = $this -> db();
@@ -28,7 +28,7 @@ class weight extends selection {
     
     public function read()
     {
-         $con = $this -> db();
+        $con = $this -> db();
         $query = mysqli_query($con,"SELECT * FROM WT WHERE ID = 1");
         
         while ($row = mysqli_fetch_array($query)) {

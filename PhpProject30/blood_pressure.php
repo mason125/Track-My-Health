@@ -13,7 +13,7 @@
  */
 class blood_pressure extends selection 
 {
-    public function enter($val)
+    public function enter($val, $val2)
     {
         //$con = $this -> db();//establish db connection
         //$query = "INSERT INTO BP (TOP, BOTTOM, DATE) VALUES ()";//NOT DONE

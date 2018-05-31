@@ -17,10 +17,17 @@ angular.module('unit').controller('WT', function($scope, $http) {
    $scope.write = function(weight)
    {
        $scope.value = weight;
-         $http.get("backend.php", {params:{'func':2, 'cat': "wt", 'val':$scope.value}}).then(function(response) {
-            $scope.results = response.data;
-            alert($scope.results);
-        });
+       if ($scope.value > 975 || $scope.value < 3)
+       {
+           alert("Please enter a valid weght")
+       }
+       else
+       {
+           $http.get("backend.php", {params:{'func':2, 'cat': "wt", 'val':$scope.value}}).then(function(response) {
+                $scope.results = response.data;
+                alert($scope.results);
+            });
+       }
    }
  
  });
