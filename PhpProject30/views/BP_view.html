@@ -6,5 +6,16 @@ and open the template in the editor.
 -->
 <div  ng-controller="BP">
     <div ng-init="read()">
-    <h2>Blood Glucose</h2>
+        <button class = "form" ng-click ="graph()">Graph</button>
+        <button class = "form" ng-click ="stats()">Stats</button>
+        <h2>Blood Glucose</h2>
+        <table id ="table">
+            <th>date</th>
+            <th>value</th>
+            <tr ng-repeat="x in user">
+                <td>{{ x.CDATE }}</td>
+                <td>{{ x.BLOOD_PRESSURE }}</td>
+            </tr>
+        </table>
+    </div>
 </div>

@@ -7,8 +7,9 @@ and open the template in the editor.
 <h2>Please enter your blood pressure reading</h2>
 
 <div id ="form" align="center" ng-controller = "BP">
-    <input id ="topNum" placeholder="Top Number" type ="number" class="form"/>
-    <br>
-    <input id ="bottomNum" placeholder="Bottom Number" type="number" class ="form">
+    <input ng-model ="topNum" placeholder="Top Number" type ="number" class="form"/>
+    <br><br>
+    <input ng-model="bottomNum" placeholder="Bottom Number" type="number" class ="form"/>
+    <br><br>
     <button class ="form" id ="bp_enter" ng-click="write(topNum, bottomNum)">Enter</button>
 </div>

@@ -9,20 +9,21 @@ angular.module('unit').controller('BP', function($scope, $http) {
     
     $scope.read = function()
     {
-        
-       alert("page loaded") 
+         $http.get("backend.php", {params:{'cat': "bp"}}).then(function(response) {
+            $scope.user = response.data;
+           
+        });
+       
     }
     
     $scope.write = function(topNum, bottomNum)
     {
-        $scope.top = topNum;
-        $scope.bottom = bottomNum;
-        $http.get("backend.php", {params:{'func':2, 'cat': "bp", 'value1': $scope.top}})
+       $scope.value = topNum + "/" + bottomNum;//format string
+       $http.get("backend.php", {params:{'func':2, 'cat': "bp", 'val':$scope.value}})
             .then(function(response) {
-                $scope.results = response.data;
-                alert($scope.results);
+                $scope.resp = response.data;
+                alert($scope.resp);
         });
-        
     }
     
 });

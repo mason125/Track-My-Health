@@ -15,14 +15,27 @@ class blood_pressure extends selection
 {
     public function enter($val, $val2)
     {
-        //$con = $this -> db();//establish db connection
-        //$query = "INSERT INTO BP (TOP, BOTTOM, DATE) VALUES ()";//NOT DONE
-        //mysqli_query($con, $query);
+        $con = $this -> db();
+        $query = "INSERT INTO BP (ID, BLOOD_PRESSURE, CDATE) VALUES (1,?, NOW())";
+        $stmt = $con ->prepare($query);
+        $stmt->bind_param("s", $val);
+        $stmt -> execute();
+        $con->close();
+        
+        echo("Update Complete!");
+         
     }
     
     public function read()
     {
-        echo "BP read";
+        $con = $this -> db();
+        $query = mysqli_query($con,"SELECT * FROM BP WHERE ID = 1");
+        
+        while ($row = mysqli_fetch_array($query)) {
+            $data[] = array("CDATE"=>$row['CDATE'],"BLOOD_PRESSURE"=>$row['BLOOD_PRESSURE']);
+        }
+        echo json_encode($data);
+        $con->close();
     }
     
     

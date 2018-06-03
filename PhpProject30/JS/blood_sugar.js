@@ -22,7 +22,7 @@ angular.module('unit').controller('BS', function($scope, $http) {
         {
             alert("Seek help now!!");
         }
-        else if ($scope.value < 70)
+        else if ($scope.value < 80)
         {
             alert("Your leves are low eat somethign now!");
         }
