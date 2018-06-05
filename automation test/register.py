@@ -13,7 +13,8 @@ driver = webdriver.Chrome(driver_path)
 driver.get("http://localhost/PhpProject30/index.php#!/")
 
 #navigate to register
-driver.find_element_by_id('register')
+driver.find_element_by_id('register').click()
+time.sleep(1)
 
 #enter value and press click
 driver.find_element_by_id('fname').send_keys(first_name)
