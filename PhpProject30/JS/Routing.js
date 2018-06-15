@@ -9,9 +9,6 @@
 //module only one therefore leve it here 
 const app = angular.module("unit", ["ngRoute"]);
 
-
-
-
   
 app.config(function($routeProvider) {
     $routeProvider
@@ -35,5 +32,8 @@ app.config(function($routeProvider) {
     })
     .when("/WT_view",{
        templateUrl: "views/WT_view.html"
+    })
+    .when("/x",{
+        templateUrl: "views/register.html"
     })
 });

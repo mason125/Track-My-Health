@@ -12,10 +12,17 @@ angular.module('unit').controller('operation', function($scope, $http) {
     {
 
        $("#main_menu").show();
+       $("#home").show();
+       $("#login").hide();
        $("#login").hide();
        $("#sub_wt").hide();
        $("#sub_bs").hide();
        $("#sub_bp").hide();
+   }
+   
+   $scope.create_login = function()
+   {
+       $("#login").hide();
    }
    
    $scope.login = function ()
@@ -24,7 +31,8 @@ angular.module('unit').controller('operation', function($scope, $http) {
        $("#sub_wt").hide();
        $("#sub_bs").hide();
        $("#sub_bp").hide();
-       $("#main_menu").hide()
+       $("#home").hide();
+       $("#main_menu").hide();
    }
    
    //turn on bs menu
@@ -55,9 +63,13 @@ angular.module('unit').controller('operation', function($scope, $http) {
    }
    
    //show stats
-   $scope.stats = function()
+   $scope.stats = function(data)
    {
-       alert("stat")
+       let sorted_array = data.sort((a,b) => a-b);
+       let max = sorted_array[sorted_array.length - 1];
+       let min = sorted_array[0];
+       alert(max);
+       alert(min);
    }
 }); 
 
@@ -65,5 +77,5 @@ angular.module('unit').controller('operation', function($scope, $http) {
         
 angular.module('unit').controller('start', function($scope, $http) {
     
-        $scope.main();
+        $scope.login();
 });

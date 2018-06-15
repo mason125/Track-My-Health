@@ -7,8 +7,8 @@ and open the template in the editor.
 
 <h2>Please enter your glucose reading</h2>
 <div id ="form" align="center" ng-controller="BS">
-    <input id ="val" type ="number" class="form" ng-model ="glucose"/>
-    <button class ="form"  ng-click = "write(glucose)" >Enter</button>
+    <input id ="bs_val" type ="number" class="form" ng-model ="glucose"/>
+    <button id='bs_enter' class ="form"  ng-click = "write(glucose)" >Enter</button>
     <button ng-click="stats()"></button>
 </div>
 

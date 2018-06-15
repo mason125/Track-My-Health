@@ -16,14 +16,17 @@
             <div ng-controller="operation">
                 <a id = "home" href ="#!/" ng-click = "main()"><img src ="pics/home_1.png"/></a>
                 <!-- buttons-->
-                <!-- login
-                <div class ="form" id ="login" align ="center">
-                    <input id ="val" class="form" placeholder ="email" ng-model ="email"/>
-                    <br><br>
-                    <input id ="pass" class ="form" placeholder="password" ng-model="pass"/>
-                    <br><br>
-                    <button class ="form" id = "enter" ng-click = "login(email,pass)" >Login</button>
-                </div>-->
+                <!-- login-->
+                <div class ="form" id ="login" align ="center" ng-controller="user">
+                    <div id ="login">
+                        <input id ="user_email" class="form" placeholder ="email" ng-model ="email"/>
+                        <br><br>
+                        <input id ="user_pass" class ="form" placeholder="password" ng-model="pass"/>
+                        <br><br>
+                        <a><button class ="form" id = "enter" ng-click = "read(email,pass)" >Login</button></a>
+                    </div>
+                    <a href="#!x" id = "register" ng-click='create_login()'><button class ="form">Register</button></a>
+                </div>
                 <div align ="center" ng-controller="start">
                     <div id = "main_menu">
                         <a id = "bp_btn" ng-click = "bp_menu()"><img src ="pics/BP.png"/></a>
@@ -34,20 +37,20 @@
                     </div>
                     <br>
                     <div id = "sub_bs">
-                        <a href ="#!BS_Enter"><img src ="pics/Enter.png"/></a>
+                        <a id = "BS_enter_btn" href ="#!BS_Enter"><img src ="pics/Enter.png"/></a>
                         <br>
-                        <a href ="#!BS_view"><img src ="pics/stats.png"/></a>
+                        <a id = "BS_stats_btn" href ="#!BS_view"><img src ="pics/stats.png"/></a>
                     </div>
                     <br>
                     <div id = "sub_bp">
-                        <a  href="#!BP_Enter"><img src ="pics/Enter.png"/></a>
+                        <a id='BP_enter_btn' href="#!BP_Enter"><img src ="pics/Enter.png"/></a>
                         <br>
-                        <a  href ="#!BP_view"><img src ="pics/stats.png"/></a>
+                        <a id='BP_stats_btn' href ="#!BP_view"><img src ="pics/stats.png"/></a>
                     </div>
                     <div id = "sub_wt">
-                        <a href="#!WT_Enter"><img src ="pics/Enter.png"/></a>
+                        <a id = "WT_enter_btn" href="#!WT_Enter"><img src ="pics/Enter.png"/></a>
                         <br>
-                        <a href="#!WT_view"><img src ="pics/stats.png"/></a>
+                        <a id = "WT_stats_btn" href="#!WT_view"><img src ="pics/stats.png"/></a>
                     </div>
                 </div>
                 
@@ -55,7 +58,8 @@
                 <div align = "center" ng-view id = "spa"></div>
             </div>
         </div>
-       <script src="JS/Routing.js"></script>
+        <script src="JS/Routing.js"></script>
+        <script src='JS/register.js'></script>
         <script src="JS/main.js"></script>
         <script src="JS/blood_sugar.js"></script>
         <script src="JS/blood_pressure.js"></script>

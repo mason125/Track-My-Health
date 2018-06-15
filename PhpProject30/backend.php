@@ -16,6 +16,7 @@ require("factory.php");
 require("blood_pressure.php");
 require("blood_sugar.php");
 require("weight.php");
+require("register.php");
 
 $sel = new factory;//factory function
 
@@ -23,7 +24,8 @@ if(isset($_GET['func']))//enter data to db
 {
     //func empty = read.  if func not  write
     //insert data into database 
-    
+    //echo($_GET['cat']);
+    //$fac = $sel -> func("u");
    $fac = $sel -> func($_GET["cat"]);
    $fac -> enter($_GET['val']);
   
@@ -31,6 +33,7 @@ if(isset($_GET['func']))//enter data to db
  else //read data from db
  {
  
+     
     $fac = $sel -> func($_GET["cat"]);
-    $fac -> read();     
+    $fac -> read($_GET['val']);     
  }

@@ -9,7 +9,7 @@ angular.module('unit').controller('BP', function($scope, $http) {
     
     $scope.read = function()
     {
-         $http.get("backend.php", {params:{'cat': "bp"}}).then(function(response) {
+         $http.get("backend.php", {params:{'cat': "bp", 'val': sessionStorage.getItem("ID")}}).then(function(response) {
             $scope.user = response.data;
            
         });
@@ -18,8 +18,9 @@ angular.module('unit').controller('BP', function($scope, $http) {
     
     $scope.write = function(topNum, bottomNum)
     {
-       $scope.value = topNum + "/" + bottomNum;//format string
-       $http.get("backend.php", {params:{'func':2, 'cat': "bp", 'val':$scope.value}})
+       let data_array = [sessionStorage.getItem("ID"), topNum, bottomNum];
+       let formatted_array = JSON.stringify(data_array);
+       $http.get("backend.php", {params:{'func':2, 'cat': "bp", 'val':formatted_array}})
             .then(function(response) {
                 $scope.resp = response.data;
                 alert($scope.resp);

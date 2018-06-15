@@ -12,10 +12,11 @@ class blood_sugar extends selection
     //this method enter blood sugar data into database
     public function enter($val, $val2)
     {
+        $data = json_decode($val);
         $con = $this -> db();
-        $query = "INSERT INTO BS (ID, CDATE, GLUCOSE) VALUES (1, NOW(), ?)";
+        $query = "INSERT INTO BS (ID, CDATE, GLUCOSE) VALUES (?, NOW(), ?)";
         $stmt = $con ->prepare($query);
-        $stmt->bind_param("i", $val);
+        $stmt->bind_param("ii", $data[0], $data[1]);
         $stmt -> execute();
         $con->close();
         
@@ -23,10 +24,10 @@ class blood_sugar extends selection
     }
     
     //this method queries blood sugar data from database
-    public function read()
+    public function read($login)
     {
         $con = $this -> db();
-        $query = mysqli_query($con,"SELECT * FROM BS WHERE ID = 1");
+        $query = mysqli_query($con,"SELECT * FROM BS WHERE ID = '$login'");
         
         while ($row = mysqli_fetch_array($query)) {
             $data[] = array("CDATE"=>$row['CDATE'],"GLUCOSE"=>$row['GLUCOSE']);

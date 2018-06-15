@@ -8,7 +8,8 @@ angular.module('unit').controller('WT', function($scope, $http) {
  
    $scope.read = function()
    {
-          $http.get("backend.php", {params:{'cat': "wt"}}).then(function(response) {
+          let ID = sessionStorage.getItem("ID");
+          $http.get("backend.php", {params:{'cat': "wt", 'val': ID}}).then(function(response) {
             $scope.user = response.data;
            
         });
@@ -16,14 +17,16 @@ angular.module('unit').controller('WT', function($scope, $http) {
    
    $scope.write = function(weight)
    {
-       $scope.value = weight;
-       if ($scope.value > 975 || $scope.value < 3)
+       let value = weight;
+       if (value > 975 || value < 3)
        {
            alert("Please enter a valid weght")
        }
        else
        {
-           $http.get("backend.php", {params:{'func':2, 'cat': "wt", 'val':$scope.value}}).then(function(response) {
+           let data_array = [sessionStorage.getItem("ID"), weight];
+           let formatted_array = JSON.stringify(data_array);
+           $http.get("backend.php", {params:{'func':2, 'cat': "wt", 'val':formatted_array}}).then(function(response) {
                 $scope.results = response.data;
                 alert($scope.results);
             });

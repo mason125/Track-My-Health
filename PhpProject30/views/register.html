@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<h1>Register</h1>
+<div class = "form" align ="center" ng-controller ="user">
+    <input id="fname" ng-model="fname" placeholder ="First Name"/>
+    <br><br>
+    <input id="lname" ng-model="lname" placeholder ="Last Name"/>
+    <br><br>
+    <input id="email" ng-model="email" placeholder ="email"/>
+    <br><br>
+    <input id ="password" ng-model="password" placeholder ="password"/>
+    <br><br>
+    <button id = "register_btn" class ="form" ng-click="write(fname,lname,email,password)">Register</button>
+</div>
