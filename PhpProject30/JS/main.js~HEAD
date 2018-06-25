@@ -57,9 +57,9 @@ angular.module('unit').controller('operation', function($scope, $http) {
    }
    
    //show graph
-   $scope.graph = function()
+   $scope.home = function()
    {
-       
+       $('#home').show();
    }
    
    //show stats

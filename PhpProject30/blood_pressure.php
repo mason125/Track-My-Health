@@ -13,7 +13,11 @@
  */
 class blood_pressure extends selection 
 {
+<<<<<<< HEAD
     public function enter($val)
+=======
+    public function enter($val, $val2)
+>>>>>>> e3675ae7348b20f7f33a753327a790e9b2ffdc07
     {
         $data = json_decode($val);
         
