@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<div  ng-controller="BP">
+    <div ng-init="read()">
+        <button class = "form" ng-click ="graph()">Graph</button>
+        <button class = "form" ng-click ="stats()">Stats</button>
+        <h2>Blood Pressure</h2>
+        <table id ="table">
+            <th>date</th>
+            <th>Top Number</th> 
+            <th>Bottom Number</th>
+            <tr ng-repeat="x in user">
+                <td>{{ x.CDATE }}</td>
+                <td>{{ x.TOP_NUMBER }}</td>
+                <td>{{ x.BOT_NUMBER }}</td>
+            </tr>
+        </table>
+    </div>
+</div>
