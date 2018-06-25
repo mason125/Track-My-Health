@@ -10,7 +10,7 @@
 class blood_sugar extends selection
 {
     //this method enter blood sugar data into database
-    public function enter($val, $val2)
+    public function enter($val)
     {
         $data = json_decode($val);
         $con = $this -> db();

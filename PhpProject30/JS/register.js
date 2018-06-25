@@ -37,10 +37,7 @@ angular.module('unit').controller('user', function($scope, $http) {
             .then(function(response) {
                 $scope.resp = response.data;
                 alert($scope.resp);
-<<<<<<< HEAD
                 $scope.home();
-=======
->>>>>>> e3675ae7348b20f7f33a753327a790e9b2ffdc07
         });
     };
     

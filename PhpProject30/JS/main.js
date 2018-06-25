@@ -57,19 +57,19 @@ angular.module('unit').controller('operation', function($scope, $http) {
    }
    
    //show graph
-   $scope.graph = function()
+   $scope.home = function()
    {
-       
+       $('#home').show();
    }
    
    //show stats
    $scope.stats = function(data)
    {
        let sorted_array = data.sort((a,b) => a-b);
-       let max = sorted_array[sorted_array.length - 1];
-       let min = sorted_array[0];
-       alert(max);
-       alert(min);
+       $scope.avg = (sorted_array.reduce((total,num) => total + num)/sorted_array.length).toFixed(2);
+       $scope.max = sorted_array[sorted_array.length - 1];
+       $scope.min = sorted_array[0];
+   
    }
 }); 
 

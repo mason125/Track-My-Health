@@ -5,10 +5,12 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <div  ng-controller="WT">
-    <button ng-click="stats()">stats</button>
-    <button ng-click="graph()">graph</button>
-    <br>
     <div ng-init="read()">
+        <h2>
+            Max: {{max}} &nbsp;
+            Min: {{min}} &nbsp;
+            Avg: {{avg}} &nbsp;
+        </h2>
         <h2>Weight</h2>
         <table id ="table">
             <th>date</th>

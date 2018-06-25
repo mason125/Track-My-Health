@@ -24,8 +24,7 @@ if(isset($_GET['func']))//enter data to db
 {
     //func empty = read.  if func not  write
     //insert data into database 
-    //echo($_GET['cat']);
-    //$fac = $sel -> func("u");
+
    $fac = $sel -> func($_GET["cat"]);
    $fac -> enter($_GET['val']);
   

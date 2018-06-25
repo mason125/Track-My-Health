@@ -13,11 +13,7 @@
  */
 class register extends selection
 {
-<<<<<<< HEAD
     public function enter($val)
-=======
-    public function enter($val, $val2)
->>>>>>> e3675ae7348b20f7f33a753327a790e9b2ffdc07
     {
    
        //decode user array
@@ -31,11 +27,7 @@ class register extends selection
        $stmt -> execute();
        $con->close();
  
-<<<<<<< HEAD
        echo("Welcome to Track My Health! Press the home button to begin");
-=======
-       echo("Welcome to Track My Health");
->>>>>>> e3675ae7348b20f7f33a753327a790e9b2ffdc07
     }
     
     public function read($login)

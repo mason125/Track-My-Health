@@ -15,8 +15,6 @@
             <h1 align ="center"> Track My Health </h1>
             <div ng-controller="operation">
                 <a id = "home" href ="#!/" ng-click = "main()"><img src ="pics/home_1.png"/></a>
-                <!-- buttons-->
-                <!-- login-->
                 <div class ="form" id ="login" align ="center" ng-controller="user">
                     <div id ="login">
                         <input id ="user_email" class="form" placeholder ="email" ng-model ="email"/>
@@ -52,9 +50,7 @@
                         <br>
                         <a id = "WT_stats_btn" href="#!WT_view"><img src ="pics/stats.png"/></a>
                     </div>
-                </div>
-                
-                <div id ="chart" align = "center"></div>      
+                </div>     
                 <div align = "center" ng-view id = "spa"></div>
             </div>
         </div>
