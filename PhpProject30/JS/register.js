@@ -37,7 +37,7 @@ angular.module('unit').controller('user', function($scope, $http) {
             .then(function(response) {
                 $scope.resp = response.data;
                 alert($scope.resp);
-                $scope.home();
+                //$scope.home();
         });
     };
     

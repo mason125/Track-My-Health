@@ -26,8 +26,7 @@ class register extends selection
        $stmt->bind_param("ssss", $data[0],$data[1],$data[2],$data[3]);
        $stmt -> execute();
        $con->close();
- 
-       echo("Welcome to Track My Health! Press the home button to begin");
+       echo("Welcome to Track My Health! Please restar the app!");
     }
     
     public function read($login)
