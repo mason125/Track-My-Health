@@ -1,30 +1,37 @@
 from selenium import webdriver
-import time
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By as BY
+from selenium.webdriver.support.ui import WebDriverWait as wait
 
-#glucose test value
-glucose = 120
+import Login
+user = Login.login
+driver = user.data()
 
-#drivers
-driver_path = r'C:\Users\Mason\Desktop\chromedriver.exe'
-driver = webdriver.Chrome(driver_path)
-driver.get("http://localhost/PhpProject30/index.php#!/")
+#data
+glucose = 118
 
-#navigate to diabetes log
-driver.find_element_by_id('home').click()
-driver.find_element_by_id('bs_btn').click()
-driver.find_element_by_id('BS_enter_btn').click()
+#navigate to data input
+driver.find_element_by_id("bs_btn").click()
+try:
+    wait(driver, 10).until(EC.presence_of_element_located((BY.ID, "BS_enter_btn")))
+except:
+    print ("error loading bs menu")
+finally:
+   driver.find_element_by_id("BS_enter_btn").click()
 
-#enter value and press click
-time.sleep(1)
-txtbox = driver.find_element_by_id('bs_val')
-txtbox.send_keys(glucose)
-driver.find_element_by_id('bs_enter').click()
+#input data
+try:
+    wait(driver, 10).until(EC.presence_of_element_located((BY.ID, 'bs_val')))
+except:
+    print("error at view")
+finally:
+    driver.find_element_by_id('bs_val').send_keys(glucose)
+    driver.find_element_by_id('bs_enter').click()
 
-#alert box
-time.sleep(1)
-msg = driver.switch_to.alert
-if(msg.text == "Update Complete!"):
-    print("test passed")
-    msg.accept()
-else:
-    print("test failed")
+#handel alert
+try:
+    wait(driver, 10).until((EC.alert_is_present()))
+except:
+    print("error at alert")
+finally:
+    driver.switch_to.alert.accept()

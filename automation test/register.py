@@ -8,7 +8,7 @@ email = "masonwhite77@gmail.com"
 password = "mas145"
 
 #drivers
-driver_path = r'C:\Users\Mason\Desktop\chromedriver.exe'
+driver_path = r'C:\Users\mxrac\Desktop\chromedriver.exe'
 driver = webdriver.Chrome(driver_path)
 driver.get("http://localhost/PhpProject30/index.php#!/")
 
