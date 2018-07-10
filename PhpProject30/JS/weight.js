@@ -10,9 +10,9 @@ angular.module('unit').controller('WT', function($scope, $http) {
    {
           let ID = sessionStorage.getItem("ID");
           $http.get("backend.php", {params:{'cat': "wt", 'val': ID}}).then(function(response) {
-          $scope.user = response.data;
-          let value_array = $scope.user.map(e => parseFloat(e.WEIGHT)); 
-          $scope.stats(value_array);
+              $scope.user = response.data;
+              let value_array = $scope.user.map(e => parseFloat(e.WEIGHT)); 
+              $scope.stats(value_array);
         });
    }
    

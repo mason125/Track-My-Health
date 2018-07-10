@@ -18,6 +18,7 @@ angular.module('unit').controller('operation', function($scope, $http) {
        $("#sub_wt").hide();
        $("#sub_bs").hide();
        $("#sub_bp").hide();
+       $("#sub_med").hide();
    }
    
    $scope.create_login = function()
@@ -31,6 +32,7 @@ angular.module('unit').controller('operation', function($scope, $http) {
        $("#sub_wt").hide();
        $("#sub_bs").hide();
        $("#sub_bp").hide();
+       $("#sub_med").hide();
        $("#home").hide();
        $("#main_menu").hide();
    }
@@ -56,6 +58,12 @@ angular.module('unit').controller('operation', function($scope, $http) {
        $('#sub_wt').show();
    }
    
+   //turn on med menu
+   $scope.med_menu = function()
+   {
+       $("#main_menu").hide();
+       $("#sub_med").show();
+   }
    //show graph
    $scope.home = function()
    {

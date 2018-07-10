@@ -19,7 +19,7 @@
                     <div id ="login">
                         <input id ="user_email" class="form" placeholder ="email" ng-model ="email"/>
                         <br><br>
-                        <input id ="user_pass" class ="form" placeholder="password" ng-model="pass"/>
+                        <input id ="user_pass" type ="password" class ="form" placeholder="password" ng-model="pass"/>
                         <br><br>
                         <a><button class ="form" id = "enter" ng-click = "read(email,pass)" >Login</button></a>
                     </div>
@@ -28,10 +28,10 @@
                 <div align ="center" ng-controller="start">
                     <div id = "main_menu">
                         <a id = "bp_btn" ng-click = "bp_menu()"><img src ="pics/BP.png"/></a>
-                        <br>
                         <a id = "bs_btn" ng-click = "bs_menu()"><img src ="pics/BS.png"/></a>
                         <br>
                         <a id ="wt_btn" ng-click = "wt_menu()"><img src="pics/Weight.png"></a>
+                        <a id ="med_btn" ng-click ="med_menu()"><img src ="pics/meds.png"></a>
                     </div>
                     <br>
                     <div id = "sub_bs">
@@ -49,6 +49,11 @@
                         <a id = "WT_enter_btn" href="#!WT_Enter"><img src ="pics/Enter.png"/></a>
                         <br>
                         <a id = "WT_stats_btn" href="#!WT_view"><img src ="pics/stats.png"/></a>
+                    </div>
+                    <div id = "sub_med">
+                        <a id ="med_enter_btn" href ="#!med_enter"><img src ="pics/Enter.png"/></a>
+                        <br>
+                        <a id ="med_stats_btn" href="#!med_stats"><img src ="pics/stats.png"/></a> 
                     </div>
                 </div>     
                 <div align = "center" ng-view id = "spa"></div>
