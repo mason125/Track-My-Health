@@ -18,15 +18,16 @@ class factory
     {
         switch($choice)
         {
-            case "u":
+            case "u"://registration obj
                 return (new register);
-            case "bp":
+            case "bp"://blood pressure obj
                 return (new blood_pressure);
-            case "wt":
+            case "wt"://weight obj
                 return (new weight);
-            case "bs":
+            case "bs"://blood sugar obj
                 return (new blood_sugar);
-            
+            case "med":
+                return(new medicine);
         }
     }
 }

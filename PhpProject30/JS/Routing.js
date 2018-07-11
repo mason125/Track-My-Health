@@ -6,7 +6,8 @@
 
 
 //only use angular for the routing
-//module only one therefore leve it here 
+//This form naviates to the proper sub screen e.g blood sugar weight
+//and so on.  
 const app = angular.module("unit", ["ngRoute"]);
 
   
@@ -32,6 +33,9 @@ app.config(function($routeProvider) {
     })
     .when("/WT_view",{
        templateUrl: "views/WT_view.html"
+    })
+    .when("/med_Enter",{
+        templateUrl: "views/med_Enter.html"
     })
     .when("/x",{
         templateUrl: "views/register.html"

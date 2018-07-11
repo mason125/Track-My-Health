@@ -21,11 +21,13 @@ angular.module('unit').controller('operation', function($scope, $http) {
        $("#sub_med").hide();
    }
    
+   //this fires the create login screen
    $scope.create_login = function()
    {
        $("#login").hide();
    }
    
+   //main loing in screen hide all other screens
    $scope.login = function ()
    {
        $("#login").show();
@@ -76,13 +78,11 @@ angular.module('unit').controller('operation', function($scope, $http) {
        let sorted_array = data.sort((a,b) => a-b);
        $scope.avg = (sorted_array.reduce((total,num) => total + num)/sorted_array.length).toFixed(2);
        $scope.max = sorted_array[sorted_array.length - 1];
-       $scope.min = sorted_array[0];
-   
+       $scope.min = sorted_array[0];  
    }
 }); 
 
-
-        
+//fire login on start up
 angular.module('unit').controller('start', function($scope, $http) {
     
         $scope.login();

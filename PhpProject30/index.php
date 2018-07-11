@@ -51,7 +51,7 @@
                         <a id = "WT_stats_btn" href="#!WT_view"><img src ="pics/stats.png"/></a>
                     </div>
                     <div id = "sub_med">
-                        <a id ="med_enter_btn" href ="#!med_enter"><img src ="pics/Enter.png"/></a>
+                        <a id ="med_enter_btn" href ="#!med_Enter"><img src ="pics/Enter.png"/></a>
                         <br>
                         <a id ="med_stats_btn" href="#!med_stats"><img src ="pics/stats.png"/></a> 
                     </div>
@@ -65,6 +65,7 @@
         <script src="JS/blood_sugar.js"></script>
         <script src="JS/blood_pressure.js"></script>
         <script src ="JS/weight.js"></script>
+        <script src ="JS/meds.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
     </body>
 </html>
