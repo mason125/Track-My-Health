@@ -19,11 +19,19 @@ abstract class selection
     
     public function db()
     {
-        $host = "localhost"; 
+        
+        $host = "ht.cxavl69wbi6c.us-east-1.rds.amazonaws.com"; 
+        $user = "maswhite"; 
+        $password = "kTmlord0302!"; 
+        $dbname = "healthtrack"; 
+        
+        /*
+          $host = "localhost"; 
         $user = "root"; 
         $password = ""; 
-        $dbname = "healthtrack"; 
-
+        $dbname = "healthtrack";
+         * *
+         */
         return(mysqli_connect($host, $user, $password, $dbname));
     }
     

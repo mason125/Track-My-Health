@@ -5,6 +5,17 @@ class meds extends selection{
     
     public function enter($val)
     {
+        //[0] = med name
+        //[1] = mor dose
+        //[2] = aft dose
+        //[3] = eve dose
+        $data = json_decode($val);
+        $con = $this -> db();
+        $query = "INSERT INTO WT (ID, WEIGHT, CDATE) VALUES (?,?, NOW())";
+        $stmt = $con ->prepare($query);
+        $stmt->bind_param("ii", $data[0], $data[1]);
+        $stmt -> execute();
+        $con->close();
         
     }
     

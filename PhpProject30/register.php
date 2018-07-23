@@ -21,24 +21,27 @@ class register extends selection
        
        //insert data into db
        $con = $this->db();
+       
        $query  = "INSERT INTO PATIENT (FIRST_NAME, LAST_NAME, EMAIL, P_PASSWORD) VALUES (?,?,?,?)";
        $stmt = $con ->prepare($query);
        $stmt->bind_param("ssss", $data[0],$data[1],$data[2],$data[3]);
        $stmt -> execute();
        $con->close();
-       echo("Welcome to Track My Health! Please restar the app!");
+       echo("Welcome to Track My Health! Please restart the app!");
     }
     
     public function read($login)
     {
         $data = json_decode($login);
-        $email = $data[0];
-        $pass = $data[1];
+        $email = (string)$data[0];
+        $pass = (string)$data[1];
         //echo($email);
         //echo($pass);
         
         $con = $this -> db();
-        $query = $con->query("SELECT ID FROM patient WHERE EMAIL = '$email' AND P_PASSWORD = '$pass';");
+        
+        
+        $query = $con->query("SELECT ID FROM PATIENT WHERE EMAIL = '$email' AND P_PASSWORD = '$pass';");
     
         
         if(mysqli_num_rows($query) == 0)
