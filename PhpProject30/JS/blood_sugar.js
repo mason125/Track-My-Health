@@ -5,11 +5,11 @@
  */
 
 angular.module('unit').controller('BS', function($scope, $http) {
-
+    const url = "backend.php";
    $scope.read = function()
    {
         //read data from DB
-        $http.get("backend.php", {params:{'cat': "bs", 'val':sessionStorage.getItem("ID")}}).then(function(response) {
+        $http.get(url, {params:{'cat': "bs", 'val':sessionStorage.getItem("ID")}}).then(function(response) {
             $scope.user = response.data;
             let value_array = $scope.user.map(e => parseFloat(e.GLUCOSE));
             $scope.stats(value_array);
@@ -35,7 +35,7 @@ angular.module('unit').controller('BS', function($scope, $http) {
         let formatted_data = JSON.stringify(data_array);
         
         //http request
-        $http.get("backend.php", {params:{'func':2, 'cat': "bs", 'val':formatted_data}})
+        $http.get(url, {params:{'func':2, 'cat': "bs", 'val':formatted_data}})
             .then(function(response) {
                 $scope.resp = response.data;
                 alert($scope.resp);

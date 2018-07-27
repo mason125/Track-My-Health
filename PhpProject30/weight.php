@@ -12,7 +12,7 @@
  * @author Mason
  */
 class weight extends selection {
-    //put your code here
+    //enter weight data into database
     public function enter($val)
     {
         $data = json_decode($val);
@@ -26,14 +26,16 @@ class weight extends selection {
         echo("Update Complete!");
     }
     
+    //pull weight data from database
     public function read($login)
     {
         $con = $this -> db();
         $query = mysqli_query($con,"SELECT * FROM WT WHERE ID = '$login'");
         
+        //pull all rows with user ID.
         while ($row = mysqli_fetch_array($query)) {
             $data[] = array("CDATE"=>$row['CDATE'],"WEIGHT"=>$row['WEIGHT']);
         }
-        echo json_encode($data);
+        echo json_encode($data);//pass data to front end
     }
 }

@@ -7,12 +7,12 @@
 
 //bp controller
 angular.module('unit').controller('BP', function($scope, $http) {
-    
+    const url = "backend.php";
     //input data into database.
     //use session var for patient ID
     $scope.read = function()
     {
-         $http.get("backend.php", {params:{'cat': "bp", 'val': sessionStorage.getItem("ID")}}).then(function(response) {
+         $http.get("url", {params:{'cat': "bp", 'val': sessionStorage.getItem("ID")}}).then(function(response) {
             $scope.user = response.data;
            
         });
@@ -24,7 +24,7 @@ angular.module('unit').controller('BP', function($scope, $http) {
     {
        let data_array = [sessionStorage.getItem("ID"), topNum, bottomNum];
        let formatted_array = JSON.stringify(data_array);
-       $http.get("backend.php", {params:{'func':2, 'cat': "bp", 'val':formatted_array}})
+       $http.get(url, {params:{'func':2, 'cat': "bp", 'val':formatted_array}})
             .then(function(response) {
                 $scope.resp = response.data;
                 alert($scope.resp);

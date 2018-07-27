@@ -5,11 +5,11 @@
  */
 
 angular.module('unit').controller('WT', function($scope, $http) {
- 
+   const url = "backend.php";
    $scope.read = function()
    {
           let ID = sessionStorage.getItem("ID");
-          $http.get("backend.php", {params:{'cat': "wt", 'val': ID}}).then(function(response) {
+          $http.get(url, {params:{'cat': "wt", 'val': ID}}).then(function(response) {
               $scope.user = response.data;
               let value_array = $scope.user.map(e => parseFloat(e.WEIGHT)); 
               $scope.stats(value_array);
@@ -27,7 +27,7 @@ angular.module('unit').controller('WT', function($scope, $http) {
        {
            let data_array = [sessionStorage.getItem("ID"), weight];
            let formatted_array = JSON.stringify(data_array);
-           $http.get("backend.php", {params:{'func':2, 'cat': "wt", 'val':formatted_array}}).then(function(response) {
+           $http.get(url, {params:{'func':2, 'cat': "wt", 'val':formatted_array}}).then(function(response) {
                 $scope.results = response.data;
                 alert($scope.results);
             });

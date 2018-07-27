@@ -6,14 +6,14 @@
 
 
 angular.module('unit').controller('user', function($scope, $http) {
-    
+    const url = "backend.php";
     //pull user data 
     $scope.read = function(email, password)
     {
      
         let user = [email, password];
         let formatted_user = JSON.stringify(user);
-        $http.get("backend.php", {params:{'cat': "u",'val':formatted_user}}).then(function(response) {
+        $http.get(url, {params:{'cat': "u",'val':formatted_user}}).then(function(response) {
             $scope.user = response.data;
             
             if($scope.user === "No_ID")
@@ -34,7 +34,7 @@ angular.module('unit').controller('user', function($scope, $http) {
     {
        let user_data = [fname, lname, email,pass];
        let formatted_data = JSON.stringify(user_data);
-       $http.get("backend.php", {params:{'func':2, 'cat': "u", 'val':formatted_data}})
+       $http.get(url, {params:{'func':2, 'cat': "u", 'val':formatted_data}})
             .then(function(response) {
                 $scope.resp = response.data;
                 alert($scope.resp);

@@ -13,6 +13,7 @@
  */
 class register extends selection
 {
+   //this method creates a user account.  Takes Email and Password 
     public function enter($val)
     {
    
@@ -30,20 +31,18 @@ class register extends selection
        echo("Welcome to Track My Health! Please restart the app!");
     }
     
+    //this method reads the user login data, also checks if the user login
+    //is valid
     public function read($login)
     {
+        //get and format user login data
         $data = json_decode($login);
         $email = (string)$data[0];
         $pass = (string)$data[1];
-        //echo($email);
-        //echo($pass);
         
         $con = $this -> db();
-        
-        
+         
         $query = $con->query("SELECT ID FROM PATIENT WHERE EMAIL = '$email' AND P_PASSWORD = '$pass';");
-    
-        
         if(mysqli_num_rows($query) == 0)
         {
             echo("No_ID");

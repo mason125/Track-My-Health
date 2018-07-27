@@ -19,19 +19,13 @@ abstract class selection
     
     public function db()
     {
-        
+        //database connection data.  This connects to the AWS MySQL DB
+        //this is a live version.  
         $host = "ht.cxavl69wbi6c.us-east-1.rds.amazonaws.com"; 
         $user = "maswhite"; 
         $password = "kTmlord0302!"; 
         $dbname = "healthtrack"; 
         
-        /*
-          $host = "localhost"; 
-        $user = "root"; 
-        $password = ""; 
-        $dbname = "healthtrack";
-         * *
-         */
         return(mysqli_connect($host, $user, $password, $dbname));
     }
     
