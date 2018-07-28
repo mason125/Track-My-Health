@@ -12,7 +12,7 @@ angular.module('unit').controller('BP', function($scope, $http) {
     //use session var for patient ID
     $scope.read = function()
     {
-         $http.get("url", {params:{'cat': "bp", 'val': sessionStorage.getItem("ID")}}).then(function(response) {
+         $http.get(url, {params:{'cat': "bp", 'val': sessionStorage.getItem("ID")}}).then(function(response) {
             $scope.user = response.data;
            
         });

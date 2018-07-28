@@ -23,7 +23,7 @@ angular.module('unit').controller('user', function($scope, $http) {
             else
             {
                 sessionStorage.setItem("ID", $scope.user);
-                alert($scope.user);
+                //alert($scope.user);
                 $scope.main();
             }
         });
