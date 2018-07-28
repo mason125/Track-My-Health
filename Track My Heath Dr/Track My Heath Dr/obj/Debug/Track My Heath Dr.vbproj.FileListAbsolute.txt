@@ -1,0 +1,12 @@
+c:\users\mxrac\source\repos\Track My Heath Dr\Track My Heath Dr\bin\Debug\Track My Heath Dr.exe.config
+c:\users\mxrac\source\repos\Track My Heath Dr\Track My Heath Dr\bin\Debug\Track My Heath Dr.exe
+c:\users\mxrac\source\repos\Track My Heath Dr\Track My Heath Dr\bin\Debug\Track My Heath Dr.pdb
+c:\users\mxrac\source\repos\Track My Heath Dr\Track My Heath Dr\bin\Debug\Track My Heath Dr.xml
+c:\users\mxrac\source\repos\Track My Heath Dr\Track My Heath Dr\obj\Debug\Track My Heath Dr.vbprojResolveAssemblyReference.cache
+c:\users\mxrac\source\repos\Track My Heath Dr\Track My Heath Dr\obj\Debug\Track_My_Heath_Dr.Form1.resources
+c:\users\mxrac\source\repos\Track My Heath Dr\Track My Heath Dr\obj\Debug\Track_My_Heath_Dr.Resources.resources
+c:\users\mxrac\source\repos\Track My Heath Dr\Track My Heath Dr\obj\Debug\Track My Heath Dr.vbproj.GenerateResource.Cache
+c:\users\mxrac\source\repos\Track My Heath Dr\Track My Heath Dr\obj\Debug\Track My Heath Dr.vbproj.CoreCompileInputs.cache
+c:\users\mxrac\source\repos\Track My Heath Dr\Track My Heath Dr\obj\Debug\Track My Heath Dr.exe
+c:\users\mxrac\source\repos\Track My Heath Dr\Track My Heath Dr\obj\Debug\Track My Heath Dr.xml
+c:\users\mxrac\source\repos\Track My Heath Dr\Track My Heath Dr\obj\Debug\Track My Heath Dr.pdb
